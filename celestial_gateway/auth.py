@@ -81,7 +81,7 @@ async def get_current_user(
     except JWTError:
         raise HTTPException(401, "Invalid token")
     #user = get_user_by_email(db, email)
-    user = db.query(User).first()
+    user = db.query(User).order_by(User.id.desc()).first()
     print('Ykfeookef')
     if not user:
         raise HTTPException(401, "User not found")
