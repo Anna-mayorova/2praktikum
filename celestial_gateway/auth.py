@@ -80,13 +80,17 @@ async def get_current_user(
             raise HTTPException(401, "Invalid token")
     except JWTError:
         raise HTTPException(401, "Invalid token")
-    user = get_user_by_email(db, email)
+    #user = get_user_by_email(db, email)
+    user = db.query(User).first()
     print('Ykfeookef')
     if not user:
         raise HTTPException(401, "User not found")
     return user
 
 
+@auth_router.get('/all_users')
+async def allusers(db: Session = Depends(get_db)):
+    return db.query(User).all()
 
 @auth_router.get("/users/me/", response_model=UserMeResponse)
 async def read_users_me(current_user: User = Depends(get_current_user)):
