@@ -24,15 +24,18 @@ app.include_router(auth_router)
 @app.get("/")
 def root():
     return {
-        "message": "Доступные команды для выаолнения ( в /docs ) ",
+        "message": "Доступные команды для выаолнения ( в /docs)..11111111111",
         "endpoints": {
             "signup": "/sign-up/",
             "docs": "/docs",
             "healthcheck": "/"},
             "TODO": {
                 '1 - сделано ': '/login',
-                '2': '/user/me/',
-                '3':'"/shortest-path/", response_model=PathResult'
-                    }
+                '2- cделано': '/user/me/',
+                '3 - сделано':'"/shortest-path/", response_model=PathResult'
+                    },
+            'Жопин попин':'Попин жопин'
         }
+
+print()
 
