@@ -34,7 +34,6 @@ def root():
                 '2- cделано': '/user/me/',
                 '3 - сделано':'"/shortest-path/", response_model=PathResult'
                     },
-            'Жопин попин':'Попин жопин'
         }
 
 print()
